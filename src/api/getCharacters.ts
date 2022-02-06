@@ -3,7 +3,7 @@ import { axios } from './axios';
 import { useInfiniteQuery } from 'react-query';
 import { characterKeys } from './characterKeys';
 
-const PAGE_SIZE = 20;
+export const PAGE_SIZE = 20;
 
 export const getCharacters = (page: number): Promise<Character[]> =>
   axios.get(`characters?limit=${PAGE_SIZE}&offset=${PAGE_SIZE * page}`);

@@ -12,7 +12,7 @@ const themeOptions: ThemeOptions = {
       main: '#C48F25',
     },
     background: {
-      default: '#010a01',
+      default: '#021302',
       paper: '#032202',
     },
   },

@@ -1,12 +1,15 @@
 import React from 'react';
 import CharactersList from './components/CharactersList';
 import Header from './components/Header';
+import { Container } from '@mui/material';
 
 const Home = () => {
   return (
     <>
       <Header />
-      <CharactersList />
+      <Container fixed>
+        <CharactersList />
+      </Container>
     </>
   );
 };
