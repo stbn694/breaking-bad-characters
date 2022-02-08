@@ -1,0 +1,31 @@
+{
+  "translation": {
+    "langName": "English",
+    "back": "Back",
+    "changeLang": "Change language",
+    "unknown": "Unknown",
+    "breakingBad": "Breaking Bad",
+    "betterCallSaul": "Better Call Saul",
+    "characterDetail": {
+      "error": "There was a problem getting the character's data",
+      "dob": "Date of birth",
+      "occupation": "Occupation",
+      "portrayed": "Portrayed by",
+      "appearances": "Appearances",
+      "quote": {
+        "error": "There was a problem getting the character's quote",
+        "refresh": "Refresh quote"
+      },
+      "status": {
+        "alive": "Alive",
+        "deceased": "Deceased",
+        "presumedDead": "Presumed dead",
+        "unknown": "$t(unknown) state"
+      }
+    },
+    "characterList": {
+      "characters": "Characters",
+      "error": "There was a problem getting the data"
+    }
+  }
+}

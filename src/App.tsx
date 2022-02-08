@@ -5,6 +5,7 @@ import CharacterDetail from './pages/CharacterDetail';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import theme from './theme';
+import LanguageSwitcher from './components/LanguageSwitcher';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -19,6 +20,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
+        <LanguageSwitcher />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="character/:id" element={<CharacterDetail />} />

@@ -6,6 +6,7 @@ import CharacterDetailList from './componentes/CharacterDetailList';
 import ErrorAlert from '../../components/ErrorAlert';
 import BackButton from './componentes/BackButton';
 import CharacterHeader from './componentes/CharacterHeader';
+import { useTranslation } from 'react-i18next';
 
 const ImageContainer = styled('div')(({ theme }) => ({
   paddingBottom: '140%',
@@ -24,6 +25,7 @@ const ImageContainer = styled('div')(({ theme }) => ({
 
 const CharacterDetail = () => {
   const { id } = useParams();
+  const { t } = useTranslation();
   const { data: character, isLoading, isError, refetch } = useCharacter(+id!);
 
   return (
@@ -43,7 +45,7 @@ const CharacterDetail = () => {
         </Box>
       ) : isError ? (
         <Container>
-          <ErrorAlert message="There was a problem getting the data" action={refetch} />
+          <ErrorAlert message={t('characterDetail.error')} action={refetch} />
         </Container>
       ) : (
         <>

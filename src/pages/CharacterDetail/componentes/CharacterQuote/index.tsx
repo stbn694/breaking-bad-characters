@@ -3,6 +3,7 @@ import { Box, CircularProgress, IconButton, SxProps, Typography } from '@mui/mat
 import { useRandomQuote } from '../../../../api/getQuote';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import ErrorAlert from '../../../../components/ErrorAlert';
+import { useTranslation } from 'react-i18next';
 
 const styles: SxProps = {
   borderRadius: 3,
@@ -20,15 +21,12 @@ type CharacterQuoteProps = {
 };
 
 const CharacterQuote = ({ name }: CharacterQuoteProps) => {
+  const { t } = useTranslation();
   const { data: quote, refetch, isFetching, isLoading, isError } = useRandomQuote(name);
 
   if (isError) {
     return (
-      <ErrorAlert
-        message="There was a problem getting the character's quote"
-        action={refetch}
-        sx={{ mt: 6 }}
-      />
+      <ErrorAlert message={t('characterDetail.quote.error')} action={refetch} sx={{ mt: 6 }} />
     );
   }
 
@@ -46,7 +44,7 @@ const CharacterQuote = ({ name }: CharacterQuoteProps) => {
         "{quote?.quote}"
       </Typography>
       <IconButton
-        aria-label="Refresh quote"
+        aria-label={t('characterDetail.quote.refresh')}
         size="small"
         color="secondary"
         onClick={() => refetch()}

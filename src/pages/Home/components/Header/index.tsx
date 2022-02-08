@@ -2,6 +2,7 @@ import React from 'react';
 import bgImage from '../../../../assets/images/bg.jpg';
 import logo from '../../../../assets/images/bb_logo.png';
 import { alpha, styled, Typography } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 
 const Root = styled('div')(({ theme }) => ({
   backgroundImage: [
@@ -47,12 +48,14 @@ const Title = styled('div')(({ theme }) => ({
 }));
 
 const Header = () => {
+  const { t } = useTranslation();
+
   return (
     <Root>
       <Title>
-        <img src={logo} alt="Breaking Bad" />
+        <img src={logo} alt={t('breakingBad')} />
         <Typography variant="h2" component="h1">
-          Characters
+          {t('characterList.characters')}
         </Typography>
       </Title>
     </Root>

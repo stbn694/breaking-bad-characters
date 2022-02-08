@@ -5,6 +5,7 @@ import CharacterCard from '../CharacterCard';
 import useIntersectionObserver from '../../../../hooks/useIntersectionObserver';
 import { motion, Variants } from 'framer-motion';
 import ErrorAlert from '../../../../components/ErrorAlert';
+import { useTranslation } from 'react-i18next';
 
 const cardAnimation: Variants = {
   visible: { opacity: 1, y: 0 },
@@ -12,6 +13,7 @@ const cardAnimation: Variants = {
 };
 
 const CharactersList = () => {
+  const { t } = useTranslation();
   const { data, fetchNextPage, hasNextPage, isLoading, isError, isFetching, refetch } =
     useCharacters();
 
@@ -26,7 +28,7 @@ const CharactersList = () => {
   return (
     <Box sx={{ pb: 10, textAlign: 'center' }}>
       {isError ? (
-        <ErrorAlert message="There was a problem getting the data" action={refetch} />
+        <ErrorAlert message={t('characterList.error')} action={refetch} />
       ) : (
         !isLoading && (
           <Grid

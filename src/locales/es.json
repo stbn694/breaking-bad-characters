@@ -1,0 +1,32 @@
+{
+  "translation": {
+    "langName": "Español",
+    "back": "Atrás",
+    "changeLang": "Cambiar idioma",
+    "unknown": "Desconocido",
+    "unknown_fem": "Desconocida",
+    "breakingBad": "Breaking Bad",
+    "betterCallSaul": "Better Call Saul",
+    "characterDetail": {
+      "error": "Ha ocurrido un problema al obtener los datos del personaje",
+      "dob": "Fecha de nacimiento",
+      "occupation": "Profesión",
+      "portrayed": "Interpretado por",
+      "appearances": "Apariciones",
+      "quote": {
+        "error": "Ha ocurrido un problema al obtener la cita del personaje",
+        "refresh": "Recargar cita"
+      },
+      "status": {
+        "alive": "Vivo",
+        "deceased": "Muerto",
+        "presumedDead": "Presuntamente muerto",
+        "unknown": "Estado $t(unknown)"
+      }
+    },
+    "characterList": {
+      "characters": "Personajes",
+      "error": "Ha ocurrido un problema al obtener los datos"
+    }
+  }
+}

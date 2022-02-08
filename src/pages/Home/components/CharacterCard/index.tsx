@@ -33,7 +33,7 @@ const CharacterCard = ({ character }: CharacterCardProps) => {
           <CardMedia
             component="img"
             src={character.img}
-            alt=""
+            alt={character.name}
             sx={{ position: 'absolute', objectPosition: 'center top', height: '100%' }}
           />
         )}
