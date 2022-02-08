@@ -1,9 +1,10 @@
 import React, { Fragment, useRef } from 'react';
 import { useCharacters } from '../../../../api/getCharacters';
-import { Alert, Box, Button, CircularProgress, Grid } from '@mui/material';
+import { Box, CircularProgress, Grid } from '@mui/material';
 import CharacterCard from '../CharacterCard';
 import useIntersectionObserver from '../../../../hooks/useIntersectionObserver';
 import { motion, Variants } from 'framer-motion';
+import ErrorAlert from '../../../../components/ErrorAlert';
 
 const cardAnimation: Variants = {
   visible: { opacity: 1, y: 0 },
@@ -25,16 +26,7 @@ const CharactersList = () => {
   return (
     <Box sx={{ pb: 10, textAlign: 'center' }}>
       {isError ? (
-        <Alert
-          severity="error"
-          action={
-            <Button color="secondary" onClick={() => refetch()}>
-              Retry
-            </Button>
-          }
-        >
-          There was a problem getting the data
-        </Alert>
+        <ErrorAlert message="There was a problem getting the data" action={refetch} />
       ) : (
         !isLoading && (
           <Grid

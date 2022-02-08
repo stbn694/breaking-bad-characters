@@ -11,3 +11,10 @@ export type Character = {
   category: string;
   better_call_saul_appearance: number[];
 };
+
+export type Quote = {
+  quote_id: number;
+  quote: string;
+  author: string;
+  series: string;
+};

@@ -4,3 +4,8 @@ export const characterKeys = {
   details: () => [...characterKeys.all, 'detail'] as const,
   detail: (id: number) => [...characterKeys.details(), id] as const,
 };
+
+export const quotesKeys = {
+  all: ['quotes'] as const,
+  random: () => [...quotesKeys.all, 'random'] as const,
+};

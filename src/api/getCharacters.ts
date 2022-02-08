@@ -1,7 +1,7 @@
 import { Character } from '../types';
 import { axios } from './axios';
 import { useInfiniteQuery } from 'react-query';
-import { characterKeys } from './characterKeys';
+import { characterKeys } from './queryKeys';
 
 export const PAGE_SIZE = 20;
 
