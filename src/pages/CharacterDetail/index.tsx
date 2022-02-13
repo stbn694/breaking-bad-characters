@@ -7,6 +7,7 @@ import ErrorAlert from '../../components/ErrorAlert';
 import BackButton from './componentes/BackButton';
 import CharacterHeader from './componentes/CharacterHeader';
 import { useTranslation } from 'react-i18next';
+import { Helmet } from 'react-helmet';
 
 const ImageContainer = styled('div')(({ theme }) => ({
   paddingBottom: '140%',
@@ -30,7 +31,7 @@ const CharacterDetail = () => {
 
   return (
     <Box sx={{ py: 15 }}>
-      <BackButton to="/" />
+      <BackButton to='/' />
 
       {isLoading ? (
         <Box
@@ -49,6 +50,9 @@ const CharacterDetail = () => {
         </Container>
       ) : (
         <>
+          <Helmet>
+            <title>{character?.name} - {t('title')}</title>
+          </Helmet>
           <CharacterHeader character={character!} />
           <Container fixed>
             <Grid container spacing={4}>
