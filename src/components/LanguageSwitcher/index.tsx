@@ -13,28 +13,32 @@ const LanguageSwitcher = () => {
     setAnchorEl(event.currentTarget);
   };
 
-  const handleClose = (lang: string) => {
-    i18n.changeLanguage(lang);
+  const handleClose = () => {
     setAnchorEl(null);
+  };
+
+  const changeLang = (lang: string) => {
+    i18n.changeLanguage(lang);
+    handleClose();
   };
 
   return (
     <>
       <IconButton
         aria-label={t('changeLang')}
-        size="large"
+        size='large'
         onClick={handleOpen}
         sx={{ m: 3, position: 'fixed', top: 0, right: 0 }}
         aria-controls={open ? 'lang-menu' : undefined}
-        aria-haspopup="true"
+        aria-haspopup='true'
         aria-expanded={open ? 'true' : undefined}
-        id="lang-button"
+        id='lang-button'
       >
-        <PublicIcon fontSize="inherit" />
+        <PublicIcon fontSize='inherit' />
       </IconButton>
 
       <Menu
-        id="lang-menu"
+        id='lang-menu'
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}
@@ -45,7 +49,7 @@ const LanguageSwitcher = () => {
         {Object.keys(resources)
           .filter((lang) => lang !== i18n.language)
           .map((lang) => (
-            <MenuItem key={lang} onClick={() => handleClose(lang)}>
+            <MenuItem key={lang} onClick={() => changeLang(lang)}>
               {t('langName', { lng: lang })}
             </MenuItem>
           ))}
