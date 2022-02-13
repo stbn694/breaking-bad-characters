@@ -7,7 +7,7 @@ import CharacterAppearances from '../CharacterAppearances';
 import bb_logo from '../../../../assets/images/bb_logo.png';
 import bcs_logo from '../../../../assets/images/bcs_logo.png';
 import { useTranslation } from 'react-i18next';
-import { textToCamelCase } from '../../../../utils';
+import { textToCamelCase } from '../../../../utils/utils';
 
 type CharacterDetailListProps = {
   character: Character;
