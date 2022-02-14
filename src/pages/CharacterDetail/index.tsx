@@ -7,7 +7,7 @@ import ErrorAlert from '../../components/ErrorAlert';
 import BackButton from './componentes/BackButton';
 import CharacterHeader from './componentes/CharacterHeader';
 import { useTranslation } from 'react-i18next';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { motion, Variants } from 'framer-motion';
 
 const ImageContainer = styled(motion.div)(({ theme }) => ({

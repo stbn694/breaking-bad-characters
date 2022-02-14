@@ -2,7 +2,7 @@ import React from 'react';
 import CharactersList from './components/CharactersList';
 import Header from './components/Header';
 import { Container } from '@mui/material';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 
 const Home = () => {

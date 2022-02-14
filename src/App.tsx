@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import theme from './theme';
 import LanguageSwitcher from './components/LanguageSwitcher';
+import { HelmetProvider } from 'react-helmet-async';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -19,13 +20,15 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <LanguageSwitcher />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="character/:id" element={<CharacterDetail />} />
-          <Route path="*" element={<Navigate to="/" />} />
-        </Routes>
+        <HelmetProvider>
+          <CssBaseline />
+          <LanguageSwitcher />
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='character/:id' element={<CharacterDetail />} />
+            <Route path='*' element={<Navigate to='/' />} />
+          </Routes>
+        </HelmetProvider>
       </ThemeProvider>
     </QueryClientProvider>
   );
