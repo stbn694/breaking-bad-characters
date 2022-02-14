@@ -31,10 +31,11 @@ La estructura de carpetas del proyecto es la siguiente:
 
 ## Librerías utilizadas
 
-- **MUI**: Es una de las librerías de componentes más utilizadas. Multitud de componentes y facilidad de aplicar temas.
+- **MUI**: Es una de las librerías de componentes más utilizadas. Multitud de componentes y facilidad para aplicar
+  temas.
 - **Axios**: Permite realizar peticiones HTTP de forma sencilla.
 - **React Query**: Facilita las llamadas a la API proporcionando hooks y cacheando los resultados, haciendo innecesario
-  manejar el estado entre componentes.
+  manejar el estado entre componentes con otras opciones como Redux.
 - **React Router**: La librería de routing más utilizada.
 - **react-i18next**: Framework de internacionalización.
 - **Helmet**: Permite modificar el contenido de la etiqueta `head` en cualquier componente.
@@ -44,7 +45,7 @@ La estructura de carpetas del proyecto es la siguiente:
 Se han incluído tests para algunos componentes y funciones, utilizando `jest` y `react-testing-library`. Todos los
 archivos que tienen tests asociados los tienen en su misma carpeta, con el nombre [fichero].test.tsx.
 
-Para lanzar los test ejecutar el siguiente comando:
+Para lanzar los tests ejecutar el siguiente comando:
 
 ```
 npm run test

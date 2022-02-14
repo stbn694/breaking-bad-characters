@@ -3,6 +3,7 @@ import bgImage from '../../../../assets/images/bg.jpg';
 import logo from '../../../../assets/images/bb_logo.png';
 import { alpha, styled, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
+import { motion, Variants } from 'framer-motion';
 
 const Root = styled('div')(({ theme }) => ({
   backgroundImage: [
@@ -34,7 +35,7 @@ const Root = styled('div')(({ theme }) => ({
   },
 }));
 
-const Title = styled('div')(({ theme }) => ({
+const Title = styled(motion.div)(({ theme }) => ({
   textAlign: 'center',
   '& img': {
     maxWidth: 200,
@@ -47,14 +48,19 @@ const Title = styled('div')(({ theme }) => ({
   },
 }));
 
+const titleAnimation: Variants = {
+  hidden: { opacity: 0, x: 50 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
+};
+
 const Header = () => {
   const { t } = useTranslation();
 
   return (
     <Root>
-      <Title>
+      <Title initial='hidden' animate='visible' variants={titleAnimation}>
         <img src={logo} alt={t('breakingBad')} />
-        <Typography variant="h2" component="h1">
+        <Typography variant='h2' component='h1'>
           {t('characterList.characters')}
         </Typography>
       </Title>
