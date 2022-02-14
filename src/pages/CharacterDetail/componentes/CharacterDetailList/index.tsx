@@ -45,7 +45,7 @@ const CharacterDetailList = ({ character }: CharacterDetailListProps) => {
             {character.portrayed.toLowerCase() === 'unknown' ? t('unknown') : character.portrayed}
           </CharacterDetailItem>
         )}
-        {(character.appearance.length || character.better_call_saul_appearance.length) && (
+        {!!(character.appearance.length || character.better_call_saul_appearance.length) && (
           <CharacterDetailItem label={t('characterDetail.appearances')}>
             <CharacterAppearances
               appearances={character.appearance}
